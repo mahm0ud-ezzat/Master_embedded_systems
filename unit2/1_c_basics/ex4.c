@@ -1,6 +1,6 @@
 /*
  ======================================================================================================================
- Name        : EX1_C_Progra	m_To_Print_Sentence.c
+ Name        : Assignment 1 C-Basic 
  Author      :mahmoud ezzat
 
  Description : Unit 2 C-Progtamming >> Assignment 1 C-Basic >> ex4>>  C Program to Multiply two Floating Point Numbers
