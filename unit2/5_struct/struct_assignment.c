@@ -69,3 +69,45 @@ while((s3.inches-12)>0)
 }
 return s3;
 }
+// c program to add two complex numbers by passing structure to a function 
+#include<stdio.h>
+struct Scomplex
+{
+float imagin;
+float real; 
+};
+ void read_complex( struct Scomplex *c1);
+ struct Scomplex sum_complex(struct Scomplex *c2,struct Scomplex *c3);
+
+int main()
+{
+   struct Scomplex s1,s2,sum_c; 
+   printf("please enter 1st complex numbers : \r\n");
+   read_complex(&s1);
+    printf("please enter 2nd complex numbers : \r\n");
+    read_complex(&s2);
+    sum_c = sum_complex(&s1 , &s2) ;
+    printf("\r\nsum = %0.1f + %0.1fi ",sum_c.real,sum_c.imagin);
+
+
+
+}
+void read_complex( struct Scomplex *c1)
+{
+      printf("\r\nplease enter the real part: ");
+    scanf("%f",&c1->real);
+
+    printf("please enter the imagine part: ");
+    scanf("%f",&c1->imagin);
+    
+
+
+}
+struct Scomplex sum_complex(struct Scomplex *c2,struct Scomplex *c3)
+ {
+    struct Scomplex c4;
+    c4.imagin = c2->imagin+c3->imagin;
+    c4.real =c2->real+c3->real;
+    return c4;
+
+ }
