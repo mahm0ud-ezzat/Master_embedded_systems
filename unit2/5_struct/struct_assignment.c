@@ -22,7 +22,7 @@ return 0;
 
 }
 
-// c program to add two distances (in inches-feet) system using structure
+// ex2 c program to add two distances (in inches-feet) system using structure
 //1 feet =12 inches
 #include<stdio.h>
 struct distance
@@ -69,7 +69,7 @@ while((s3.inches-12)>0)
 }
 return s3;
 }
-// c program to add two complex numbers by passing structure to a function 
+// ex3 c program to add two complex numbers by passing structure to a function 
 #include<stdio.h>
 struct Scomplex
 {
@@ -111,3 +111,60 @@ struct Scomplex sum_complex(struct Scomplex *c2,struct Scomplex *c3)
     return c4;
 
  }
+ //*************************************************************************************************************
+ // ex4 c program to store information of student using structure 
+#include<stdio.h>
+#include<string.h>
+struct Sstudent
+{
+ char name[100];
+ int roll;
+ float marks;
+};
+void read(struct Sstudent *s1);
+void display(struct Sstudent *s1);
+int main()
+{
+struct Sstudent s [10];
+int i=0,j;
+printf("please enter student information : \r\n");
+for( i =0 ;i<10 ;i++)
+{
+   printf("for roll %d \r\n",i+1);
+    read(&s[i]);
+    
+}
+printf("Displaying information of students : \r\n");
+for( j =0 ;j<10 ;j++)
+{
+   printf("information of roll number %d \r\n",j+1);
+   display(&s[j]);
+}
+
+}
+void read(struct Sstudent *s1)
+{
+    printf("enter student name : ");
+    scanf("%s",&s1->name);
+
+    printf("enter marks : ");
+    scanf("%f",&s1->marks);
+}
+void display(struct Sstudent *s1)
+{
+    printf("name : %s \r\n",s1->name);
+    printf("marks : %0.1f\r\n",s1->marks);
+  
+}
+//**************************************************************************
+// ex 5 c program to  calculate the are off a circle passing arguments to macros 
+#include<stdio.h>
+#define pi 3.14
+#define area(r) r*r*pi
+int main()
+{
+    float radius;
+    printf("enter the radius : ");
+    scanf("%f",&radius);
+    printf("area - %0.2f",area(radius));
+}
